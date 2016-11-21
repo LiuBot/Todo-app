@@ -1,4 +1,3 @@
-// reducers manage the shape of our application state.
 import {RECEIVE_TODOS, REQUEST_TODOS} from "../actions/todo_actions"
 
 const defaultState = {
@@ -18,6 +17,10 @@ const defaultState = {
 
 const TodosReducer = (state = defaultState, action) => {
   switch(action.type) {
+    case RECEIVE_TODOS:
+      let newState = {} // AKA newTodos 
+      action.todos.forEach(todo => newState[todo.id] = todo) // sets up key value pairs
+      return newState; // the todo data in the store will be replaced by the store in action.todos
     default:
       return state;
   }
