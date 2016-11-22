@@ -1,15 +1,17 @@
-import {connect} from 'react-redux';
-import {allTodos} from '../../reducers/selector'; // selector
 import TodoList from "./todo_list"; // presentational compnent
-import {requestTodos} from '../../actions/todo_actions'; //action creator
-import TodoListItem from './todo_list_item';
+import {connect} from 'react-redux';
+
+// actions to import 
+import {requestTodos, createTodo} from '../../actions/todo_actions'; //action creator
+import {allTodos} from '../../reducers/selector'; // selector
 
 const mapStateToProps = (state) => ({
 	todos: allTodos(state)
 })
 
 const mapDispatchToProps = (dispatch) => ({
-	requestTodos: () => dispatch(requestTodos())
+	requestTodos: () => dispatch(requestTodos()),
+	createTodo: todo => dispatch(createTodo(todo))
 })
 
 export default connect( // Pass your mapStateToProps and mapDispatchToProps functions to connect

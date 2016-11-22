@@ -9,20 +9,27 @@
 // Export your TodoMiddleware.
 
 
-import {REQUEST_TODOS, RECEIVE_TODOS, receiveTodos} from '../actions/todo_actions';
-import {fetchTodos} from '../util/todo_api_util';
+import {REQUEST_TODOS, CREATE_TODO, receiveTodos, receiveTodo} from '../actions/todo_actions';
+import {fetchTodos, createTodo} from '../util/todo_api_util';
 
-const TodoMiddleware = ({getState, dispatch}) => next => action => { 
+const TodoMiddleware = ({dispatch}) => next => action => { 
+		let success = null; 
+		let error = e => console.log(e); // same error callback for all cases 
+		
 	switch(action.type){
 		case REQUEST_TODOS:
-			const success = data => dispatch(receiveTodos(data));
-			const error = e => console.log(e);
+			success = data => dispatch(receiveTodos(data));
 			fetchTodos(success,error);
 			return next(action);
-		default:
+
+		case CREATE_TODO:
+			success = data => dispatch(receiveTodo(data));
+			createTodo(action.todo, success, error);
+			return next(action);
+		default: 
 			return next(action)
 	}
 }
 
 
-export default TodoMiddleware
+export default TodoMiddleware;
