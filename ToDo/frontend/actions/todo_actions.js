@@ -20,6 +20,6 @@ export const createTodo = (todo) => ({
 
 export const receiveTodo = (todo) => ({
 	type: RECEIVE_TODO,
-	todo
+	todo 
 })
 

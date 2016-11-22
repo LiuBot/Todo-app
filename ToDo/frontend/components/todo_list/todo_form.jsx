@@ -6,57 +6,59 @@ import React from 'react';
 
 class TodoForm extends React.Component{
 	constructor(props){
-		super(props)
+		super(props);
+
 		this.state = {
 			title: "",
 			body: "",
 			done: false
-		}
-
-    this.handleSubmit = this.handleSubmit.bind(this);
+		};
+  	 this.submitTodo = this.submitTodo.bind(this); // no autobinding in ES6 so need to do this
+  	 this.updateTitle = this.updateTitle.bind(this);
+  	 this.updateBody = this.updateBody.bind(this);
   }
 
-  update(property) {
-    return e => this.setState({[property]: e.target.value});
+  updateTitle(e){
+  	this.setState({title: e.currentTarget.value})
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const todo = Object.assign({}, this.state);
-    store.dispatch(createTodo({todo}));
-    this.setState({
-      title: "",
-      body: ""
-    }); // reset form
+  updateBody(e){
+  	this.setState({body: e.currentTarget.value})
   }
 
-  render() {
-    return (
-      <form className="todo-form" onSubmit={this.handleSubmit}>
-        <label>Title:
-          <input
-            className="input"
-            ref="title"
-            value={this.state.title}
-            placeholder="buy milk"
-            onChange={this.update('title')}
-            required/>
-        </label>
-        <label>Body:
-          <textarea
-            className="input"
-            ref="body"
-            cols='20'
-            value={this.state.body}
-            rows='5'
-            placeholder="2% or whatever is on sale!"
-            onChange={this.update('body')}
-            required></textarea>
-        </label>
-        <button className="create-button">Create Todo!</button>
-      </form>
-    );
+  submitTodo (e){
+  	e.preventDefault();
+  	const todo = Object.assign({}, this.state);
+  	store.dispatch(createTodo({todo}));
+  	//reset form 
+  	this.setState({
+  		title: "",
+  		body: ""
+  	})
   }
+
+  render(){
+  	let {title, body, done} = this.state; // so you don't have to keep calling this.state.title, etc.
+
+  	return(
+  		<form onSubmit ={this.submitTodo}>
+  		<label>Title</label>
+  			<input type='text'
+  			value={title}
+  			placeholder="i.e. Buy Milk"
+  			onChange= {this.updateTitle} />
+  			<br />
+  		<label>Body</label>
+  		<textarea 
+  		placeholder="i.e. Get 2% milk from Whole Foods"
+  		value={body}
+  		onChange={this.updateBody}></textarea>
+  			<br />
+  		<button>Create Todo!</button>
+  		</form>
+  		)
+  }
+ 
 };
 
 export default TodoForm;
