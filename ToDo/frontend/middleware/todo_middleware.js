@@ -9,10 +9,12 @@
 // Export your TodoMiddleware.
 
 
-import {REQUEST_TODOS, CREATE_TODO, receiveTodos, receiveTodo} from '../actions/todo_actions';
-import {fetchTodos, createTodo} from '../util/todo_api_util';
+import {REQUEST_TODOS, CREATE_TODO, UPDATE_TODO, DESTROY_TODO, 
+	receiveTodos, receiveTodo, removeTodo} from '../actions/todo_actions';
 
-const TodoMiddleware = ({dispatch}) => next => action => { 
+import {fetchTodos, createTodo, updateTodo, destroyTodo} from '../util/todo_api_util';
+
+const TodoMiddleware = ({getState, dispatch}) => next => action => { 
 		let success = null; 
 		let error = e => console.log(e); // same error callback for all cases 
 		
@@ -26,6 +28,19 @@ const TodoMiddleware = ({dispatch}) => next => action => {
 			success = data => dispatch(receiveTodo(data));
 			createTodo(action.todo, success, error);
 			return next(action);
+
+		case UPDATE_TODO:
+			success = data => dispatch(receiveTodo(data)); //call your new API utility function updateTodo and pass 
+			//receiveTodo as its success callback
+			updateTodo(action.todo, success)
+			return next(action);
+
+
+		case DESTROY_TODO: // call your new API utility function destroyTodo and pass removeTodo as its success callback
+			success = data => dispatch(removeTodo(data))
+			destroyTodo(action.todo, success)
+			return next(action);	
+
 		default: 
 			return next(action)
 	}

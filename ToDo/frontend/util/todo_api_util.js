@@ -20,4 +20,21 @@ export const createTodo = (todo, success, error) => {
   });
 };
 
+export const updateTodo = (todo, success) => {
+  $.ajax({
+    method:'PATCH',
+    url:`api/todos/${todo.id}`, // GOTTA USE BACKTICKS
+    data: {todo},
+    success
+  });
+};
+
+export const destroyTodo = (todo, success) => {
+  $.ajax({
+    method: 'DELETE',
+    url:` api/todos/${todo.id}`, // don't need the data since you're just deleting the object
+    success
+  });
+};
+
 

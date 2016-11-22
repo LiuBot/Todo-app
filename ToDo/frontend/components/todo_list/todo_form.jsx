@@ -13,7 +13,7 @@ class TodoForm extends React.Component{
 			body: "",
 			done: false
 		};
-  	 this.submitTodo = this.submitTodo.bind(this); // no autobinding in ES6 so need to do this
+  	 this.createTodo = this.createTodo.bind(this); // no autobinding in ES6 so need to do this
   	 this.updateTitle = this.updateTitle.bind(this);
   	 this.updateBody = this.updateBody.bind(this);
   }
@@ -26,10 +26,10 @@ class TodoForm extends React.Component{
   	this.setState({body: e.currentTarget.value})
   }
 
-  submitTodo (e){
+  createTodo(e){
   	e.preventDefault();
   	const todo = Object.assign({}, this.state);
-  	store.dispatch(createTodo({todo}));
+  	this.props.createTodo({todo});
   	//reset form 
   	this.setState({
   		title: "",
@@ -41,7 +41,7 @@ class TodoForm extends React.Component{
   	let {title, body, done} = this.state; // so you don't have to keep calling this.state.title, etc.
 
   	return(
-  		<form onSubmit ={this.submitTodo}>
+  		<form onSubmit ={this.createTodo}>
   		<label>Title</label>
   			<input type='text'
   			value={title}
