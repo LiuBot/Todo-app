@@ -166,6 +166,10 @@ label {
 	color:teal;
 	margin:10px;
 }
+
+.step-text{
+	margin:12px;
+}
 .step-done, .todo-done{
 	color:gray;
 	font-style:italic;
