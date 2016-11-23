@@ -14,14 +14,12 @@
 // Call updateTodo to change the status of the todo item
 
 import React from 'react';
-import TodoDetailViewContainer from './todo_list/todo_detail_view_container';
+import merge from 'lodash/merge';
 
 class TodoListItem extends React.Component{
 	constructor(props){
 		super(props);//pass props into the constructor if you intend on using this.props inside the constructor
 		this.toggleDone = this.toggleDone.bind(this);
-		this.toggleDetail = this.toggleDetail.bind(this);
-		this.state = {detail: false};
 	}
 
 	toggleDone(e){
@@ -31,28 +29,15 @@ class TodoListItem extends React.Component{
 		this.props.updateTodo(todo);
 	}
 
-	toggleDetail(e){
-		e.preventDefault();
-		this.setState({detail: !this.state.detail})
-	}
-
 	render(){
 		const {todo} = this.props;
-		let detail;
-		if (this.state.detail){
-			detail= <TodoDetailViewContainer todo={todo} />;
-		}
-
 		return(
-		<li
-			onClick={this.toggleDetail}>{todo.title}
-				<button
-					onClick={this.toggleDone}>
-					{todo.done ? "Done" : "Undone"}
-				</button>
-
-				{detail}
-			</li>
+		<li>{todo.title}
+		<button
+			onClick={this.toggleDone}>
+			{todo.done ? "Done" : "Undone"}
+		</button>
+		</li>
 			)
 	}
 }
