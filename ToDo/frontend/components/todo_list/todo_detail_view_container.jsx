@@ -1,6 +1,5 @@
 import {connect} from 'react-redux';
 import TodoDetailView from "./todo_detail_view"; // presentational compnent
-
 import {destroyTodo} from '../../actions/todo_actions'; //action creator
 
 const mapDispatchToProps = (dispatch) => ({
