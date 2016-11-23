@@ -61,6 +61,9 @@ body{
   clear: both;
 }
 
+.pencil-icon{
+	float:left;
+}
 .list-items{
 	width:500px;
 }
@@ -70,34 +73,57 @@ body{
 	padding:10px;
 	margin:10px;
 	background:#cae8dc;
-	border-radius:5px;
+	border-radius:10px;
+}
+
+.list-item-li a{
+	 -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
 }
 .todo-title{
 	font-weight:bold;
+	padding:10px;
 }
 
-.delete-button, .submit-button, .done-button{
-	margin:0px 15px;
+.todo-body{
+	padding:20px 10px;
+}
+
+label {
+	margin: 0px 10px;
+	float:left;
+	font-size:18px;
+}
+
+.button{
+	margin:10px 15px;
 	border-radius:5px;
 	background:teal;
 	color:white;
 	outline: none;
 	border:none;
 	font-size:16px;
-	padding:5px;
+	padding:8px;
+	cursor:pointer;
 }
 
-.delete-button:hover, .submit-button:hover, .done-button:hover{
+.button:hover{
 	-webkit-filter: brightness(130%)
 }
-.delete-button{
+.delete{
 	background:crimson;
 }
 
 .done{
-	background:#00ff99;
+	background:yellow;
+	color:black;
 }
 
+.submit{
+	width:400px;
+}
 .undone{
 	background:#47476b;
 }
@@ -113,6 +139,8 @@ body{
 .todo-form textarea, .todo-form input{
 	margin:10px 0px;
 	font-size:16px;
+	width:80%;
 	border-radius:5px;
-	border:2px solid white;
+	outline:none;
+	border:2px solid teal;
 }

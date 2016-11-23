@@ -14,7 +14,7 @@ import {REQUEST_TODOS, CREATE_TODO, UPDATE_TODO, DESTROY_TODO,
 
 import {fetchTodos, createTodo, updateTodo, destroyTodo} from '../util/todo_api_util';
 
-const TodoMiddleware = ({getState, dispatch}) => next => action => { 
+const TodoMiddleware = ({dispatch}) => next => action => { 
 		let success = null; 
 		let error = e => console.log(e); // same error callback for all cases 
 		

@@ -57,7 +57,7 @@ class TodoForm extends React.Component{
   		onChange={this.updateBody}></textarea>
   			<br />
   		<button
-        className="submit-button">Create Todo!</button>
+        className="submit button">Create Todo!</button>
   		</form>
   		)
   }

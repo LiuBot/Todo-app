@@ -31,7 +31,7 @@ export const updateTodo = (todo, success) => {
 
 export const destroyTodo = (todo, success) => {
   $.ajax({
-    method: 'DELETE',
+    method:'DELETE',
     url:`api/todos/${todo.id}`, // don't need the data since you're just deleting the object
     success
   });

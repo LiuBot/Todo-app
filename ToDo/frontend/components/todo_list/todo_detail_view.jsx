@@ -5,9 +5,9 @@ class TodoDetailView extends React.Component{
 		const {todo, destroyTodo} = this.props;
 			return(
 				<div>
-					<p>{todo.body}</p>
+					<p className="todo-body">{todo.body}</p>
 					<button
-						className="delete-button"
+						className="delete button"
 						onClick={destroyTodo}>Delete</button>
 				</div>
 				);

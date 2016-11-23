@@ -42,7 +42,7 @@ class TodoListItem extends React.Component{
 		let detail;
 
 		if (this.state.detail){
-			detail= <TodoDetailViewContainer todo={todo} />;
+			detail= <TodoDetailViewContainer todo={todo} id={todo.id} body={todo.body}/>;
 		}
 
 		return(
@@ -51,7 +51,7 @@ class TodoListItem extends React.Component{
 		<li
 			className="list-item-li"><a className="todo-title" onClick={this.toggleDetail}>{todo.title}</a>
 		<button
-			className={todo.done ? "done done-button" : "undone done-button"}
+			className={todo.done ? "done button" : "undone button"}
 			onClick={this.toggleDone}>
 			{todo.done ? "Done" : "Undone"}
 		</button>
