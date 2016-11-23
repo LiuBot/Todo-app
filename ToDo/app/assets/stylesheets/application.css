@@ -47,6 +47,7 @@ h1 {
 }
 
 body{
+	padding:30px;
 	width:600px;
 	margin: 0 auto;
 	font-family: proxima-nova, sans-serif;
@@ -66,6 +67,7 @@ body{
 }
 .list-items{
 	width:500px;
+	margin:0 auto;
 }
 .list-item-li{
 	cursor:pointer;
@@ -95,11 +97,13 @@ label {
 	margin: 0px 10px;
 	float:left;
 	font-size:18px;
+	color:#47476b;
+	font-weight:bold;
 }
 
 .button{
 	margin:10px 15px;
-	border-radius:5px;
+	border-radius:9px;
 	background:teal;
 	color:white;
 	outline: none;
@@ -122,7 +126,9 @@ label {
 }
 
 .submit{
+	position:relative;
 	width:400px;
+	margin:0px 0px 0px 70px;
 }
 .undone{
 	background:#47476b;
@@ -138,8 +144,10 @@ label {
 
 .todo-form textarea, .todo-form input{
 	margin:10px 0px;
+	padding:10px;
 	font-size:16px;
 	width:80%;
+	color:teal;
 	border-radius:5px;
 	outline:none;
 	border:2px solid teal;
