@@ -6,7 +6,7 @@ class TodoDetailView extends React.Component{
 	componentDidMount(){
 		this.props.requestSteps();
 	}
-	
+
 	render(){
 		const {todo, destroyTodo} = this.props;
 			return(
@@ -16,7 +16,7 @@ class TodoDetailView extends React.Component{
 
 					<button
 						className="delete button"
-						onClick={destroyTodo}>Delete</button>
+						onClick={destroyTodo}>Delete Todo</button>
 				</div>
 				);
 	}

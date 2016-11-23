@@ -4,6 +4,7 @@ export const RECEIVE_STEP = "RECEIVE_STEP";
 export const CREATE_STEP = "CREATE_STEP";
 export const UPDATE_STEP = "UPDATE_STEP";
 export const DESTROY_STEP = "DESTROY_STEP";
+export const REMOVE_STEP = "REMOVE_STEP"
 
 export const requestSteps= (todo_id) => ({ //We don't need to pass any information in order for this request to succeed
   type: REQUEST_STEPS,
@@ -16,16 +17,17 @@ export const receiveSteps= (steps) => ({
 	steps
 })
 
+export const receiveStep = (step) => ({
+	type: RECEIVE_STEP,
+	step 
+})
+
 export const createStep = (step) => ({
 	type: CREATE_STEP,
 	todo_id: step.todo_id,
 	step
 })
 
-export const receiveStep = (step) => ({
-	type: RECEIVE_STEP,
-	step 
-})
 
 
 export const updateStep = (step) => ({
@@ -38,6 +40,11 @@ export const destroyStep = (step) => ({
 	type: DESTROY_STEP,
 	todo_id: step.todo_id,
 	step 
+})
+
+export const removeStep = (step) => ({
+	type: REMOVE_STEP,
+	step
 })
 
 

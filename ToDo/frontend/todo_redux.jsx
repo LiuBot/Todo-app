@@ -6,7 +6,7 @@ import Root from "./components/root";
 
 import {requestTodos, createTodo} from "./actions/todo_actions"
 import {allTodos, stepsById} from "./reducers/selector"
-import * as stepApiUtils from './util/step_api_util'
+import {createStep} from './actions/step_actions';
 // import {fetchTodos, createTodo} from './util/todo_api_util';
 
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () =>{ // add event listener, pass
 	window.stepsById = stepsById;
 	window.requestTodos = requestTodos;
 	window.createTodo = createTodo;
-	window.stepApiUtils= stepApiUtils;
-	ReactDOM.render(<Root store={store}/>, root);
+	window.createStep = createStep;
+		ReactDOM.render(<Root store={store}/>, root);
 })
 

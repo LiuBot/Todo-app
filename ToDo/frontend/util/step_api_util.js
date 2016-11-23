@@ -7,12 +7,12 @@ export const fetchSteps = (todo_id, success) => {
   });
 };
 
-export const createStep = (todo_id, success) =>{
+export const createStep = (todo_id, step, success, error) =>{
   $.ajax({
     method: 'POST',
     url: `/api/todos/${todo_id}/steps`,
-    data:step,
-    success
+    data:{step},
+    success, error
   })
 }
 

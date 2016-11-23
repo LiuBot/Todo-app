@@ -10,15 +10,15 @@ class StepForm extends React.Component{
 
 		this.state = {
 			title: "",
-      todo_id: this.props.todo,
+      todo_id: this.props.todo_id,
 			done: false
-		};
+		}
   	 this.createStep = this.createStep.bind(this); // no autobinding in ES6 so need to do this
-  	 this.updateTitle = this.updateTitle.bind(this);
+  	 this.updateStep = this.updateStep.bind(this);
   }
 
-  updateTitle(e){
-  	this.setState({title: e.currentTarget.value})
+  updateStep(e){
+  	this.setState({title: e.target.value})
   }
 
   createStep(e){
@@ -28,24 +28,25 @@ class StepForm extends React.Component{
   	//reset form 
   	this.setState({
   		title: "",
-  		body: ""
+  		body: "",
+      done:false
   	})
   }
 
   render(){
-  	let {title, body, done} = this.state; // so you don't have to keep calling this.state.title, etc.
+  	let {title, done} = this.state; // so you don't have to keep calling this.state.title, etc.
 
   	return(
   		<form 
       className="step-form"
-      onSubmit ={this.createStep}>
+      onSubmit={this.createStep}>
 
   		<label>Add Step</label>
   			<input type='text'
-        className="step-input"
   			value={title}
+        className="step-input"
   			placeholder="i.e. Do google search"
-  			onChange= {this.updateTitle} 
+  			onChange= {this.updateStep} 
         required/>
   			<br />
   		<button

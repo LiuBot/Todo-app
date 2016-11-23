@@ -1,10 +1,10 @@
 class Api::StepsController < ApplicationController
 	 def index
-  	render json:Step.all
+  	render json: Step.all
   end 
 
   def show
-  	@step = Step.find(params[:todo_id]])
+  	@step = Step.find(params[:todo_id])
   	render json: @step
   end 
 
@@ -19,13 +19,13 @@ class Api::StepsController < ApplicationController
   end
 
   def destroy
-  	@step = Step.find(params[:id]])
+  	@step = Step.find(params[:id])
   	@step.destroy
   	render json: @step
   end 
   
   def update
-    @step = Step.find(params[:todo_id]])
+    @step = Step.find(params[:todo_id])
     @step.update(step_params)
     render json: @step
   end

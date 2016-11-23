@@ -49,7 +49,7 @@ h1 {
 
 body{
 	padding:30px;
-	width:600px;
+	width:700px;
 	margin: 0 auto;
 	font-family: proxima-nova, sans-serif;
 	background: #7ac5a8;
@@ -109,7 +109,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 label {
-	margin: 0px 10px;
+	margin: 30px 10px 10px 10px;
 	float:left;
 	font-size:18px;
 	color:#47476b;
@@ -146,6 +146,7 @@ label {
 	margin:0px 0px 0px 70px;
 	font-size:18px;
 }
+
 .undone{
 	background:#47476b;
 }
@@ -153,15 +154,41 @@ label {
 	width:500px;
 	margin: 0 auto;
 }
-.todo-form{
-	margin: 0 auto;
+.step-form, .todo-form{
+	margin: 15px auto;
 	align-text:center;
+	display:block;
 }
 
+.steps-label{
+	font-size:18px;
+	/*font-style:bold;*/
+	color:teal;
+	margin:10px;
+}
 .todo-done{
 	color:gray;
 	font-style:italic;
 	opacity:0.5;
+}
+
+.step-button-done, .step-button-undone, .step-delete-button{
+	margin:5px 5px;
+	border-radius:9px;
+	float:left;
+	background:teal;
+	font-size:10px;
+	color:white;
+	outline: none;
+	border:2px solid gray;
+	cursor:pointer;
+}
+
+.step-header{
+	display:flex;
+}
+.step-info{
+	flex-direction:column;
 }
 
 .step{
@@ -170,10 +197,13 @@ label {
 	left:40%;
 }
 
+
 .step-input, .todo-form textarea, .todo-form input{
 	margin:10px 0px;
 	padding:10px;
 	font-size:16px;
+	float:left;
+	display:block;
 	width:80%;
 	color:teal;
 	border-radius:5px;
