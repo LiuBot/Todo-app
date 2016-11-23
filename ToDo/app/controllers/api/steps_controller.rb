@@ -1,12 +1,4 @@
 class Api::StepsController < ApplicationController
-	 def index
-  	render json: Step.all
-  end 
-
-  def show
-  	@step = Step.find(params[:todo_id])
-  	render json: @step
-  end 
 
   def create
   	@step = Step.new(step_params)
@@ -18,6 +10,12 @@ class Api::StepsController < ApplicationController
     end 
   end
 
+   def index # should only display the steps of the todo (based on todo's id)
+    steps = Todo.find(params[:todo_id]).steps
+    render json:steps
+  end 
+
+
   def destroy
   	@step = Step.find(params[:id])
   	@step.destroy
@@ -25,7 +23,7 @@ class Api::StepsController < ApplicationController
   end 
   
   def update
-    @step = Step.find(params[:todo_id])
+    @step = Step.find(params[:id])
     @step.update(step_params)
     render json: @step
   end

@@ -17,7 +17,7 @@ class StepList extends React.Component{
           step={step} />))}
 			</ul>
 					<div
-						className="form-container">
+						className="steps-form">
 					<StepForm 
 					todo_id={todo_id}
 					createStep={createStep}/> 

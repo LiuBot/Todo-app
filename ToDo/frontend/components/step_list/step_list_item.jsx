@@ -7,17 +7,18 @@ class StepListItem extends React.Component {
     this.toggleStep = this.toggleStep.bind(this);
   }
 
-  toggleStep(e) {
+toggleStep(e) {
+    e.preventDefault();
     const toggledStep = merge({}, this.props.step, {
-      done: !this.props.step.done
-    });
-    this.props.updateStep(toggledStep);
+       done: !this.props.step.done
+     });
+     this.props.updateStep(toggledStep);
   }
 
   render() {
     return (
       <ol>
-      <li className="step-header">
+      <li className={this.props.step.done ? "step-done step-header" : "step-undone step-header"}>
         <div className="step-info">
           <p className="step-text">{this.props.step.title}</p>
         </div>

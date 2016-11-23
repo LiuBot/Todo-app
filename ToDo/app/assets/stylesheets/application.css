@@ -166,10 +166,11 @@ label {
 	color:teal;
 	margin:10px;
 }
-.todo-done{
+.step-done, .todo-done{
 	color:gray;
 	font-style:italic;
 	opacity:0.5;
+	text-decoration: line-through;
 }
 
 .step-button-done, .step-button-undone, .step-delete-button{
@@ -182,6 +183,10 @@ label {
 	outline: none;
 	border:2px solid gray;
 	cursor:pointer;
+}
+
+.form-container{
+	margin:70px;
 }
 
 .step-delete-button{
