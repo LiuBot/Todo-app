@@ -13,3 +13,94 @@
  *= require_tree .
  *= require_self
  */
+/* PHASE 0: Reset */
+
+html, head, body, header,
+nav, h1, a, ul, li, main,
+section, p, footer, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+header, nav, main, section,
+footer, small {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+	font-size:32px;
+	color:#2f6a53;
+}
+
+body{
+	width:600px;
+	margin: 0 auto;
+	font-family: proxima-nova, sans-serif;
+	background: #7ac5a8;
+}
+
+/* Clearfix */
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.list-items{
+	width:500px;
+}
+.list-item-li{
+	cursor:pointer;
+	border:1px solid teal;
+	padding:10px;
+	margin:10px;
+	background:#cae8dc;
+	border-radius:5px;
+}
+.todo-title{
+	font-weight:bold;
+}
+
+.delete-button, .submit-button, .done-button{
+	margin:0px 15px;
+	border-radius:5px;
+	background:teal;
+	color:white;
+	outline: none;
+	font-size:16px;
+}
+
+.delete-button:hover, .submit-button:hover, .done-button:hover{
+	-webkit-filter: brightness(130%)
+}
+.delete-button{
+	background:crimson;
+}
+
+.form-container{
+	width:500px;
+	margin: 0 auto;
+}
+.todo-form{
+	margin: 0 auto;
+	align-text:center;
+}
+
+.todo-form textarea, .todo-form input{
+	margin:10px 0px;
+	font-size:16px;
+}

@@ -41,7 +41,9 @@ class TodoForm extends React.Component{
   	let {title, body, done} = this.state; // so you don't have to keep calling this.state.title, etc.
 
   	return(
-  		<form onSubmit ={this.createTodo}>
+  		<form 
+      className="todo-form"
+      onSubmit ={this.createTodo}>
   		<label>Title</label>
   			<input type='text'
   			value={title}
@@ -54,7 +56,8 @@ class TodoForm extends React.Component{
   		value={body}
   		onChange={this.updateBody}></textarea>
   			<br />
-  		<button>Create Todo!</button>
+  		<button
+        className="submit-button">Create Todo!</button>
   		</form>
   		)
   }

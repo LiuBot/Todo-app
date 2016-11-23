@@ -21,7 +21,11 @@ class TodoList extends React.Component{
 						updateTodo={updateTodo}/>)
 			)}
 			</ul>
-					<TodoForm createTodo={createTodo}/> 
+					<div
+						className="form-container">
+					<TodoForm 
+					createTodo={createTodo}/> 
+					</div>
 		</div>
 			)
 	}

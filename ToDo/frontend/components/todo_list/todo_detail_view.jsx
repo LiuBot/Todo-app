@@ -7,6 +7,7 @@ class TodoDetailView extends React.Component{
 				<div>
 					<p>{todo.body}</p>
 					<button
+						className="delete-button"
 						onClick={destroyTodo}>Delete</button>
 				</div>
 				);
