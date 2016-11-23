@@ -51,7 +51,7 @@ class TodoListItem extends React.Component{
 		<li
 			className="list-item-li"><a className="todo-title" onClick={this.toggleDetail}>{todo.title}</a>
 		<button
-			className="done-button"
+			className={todo.done ? "done done-button" : "undone done-button"}
 			onClick={this.toggleDone}>
 			{todo.done ? "Done" : "Undone"}
 		</button>

@@ -42,7 +42,8 @@ ul {
 
 h1 {
 	font-size:32px;
-	color:#2f6a53;
+	color:#47476b;
+	text-align:center;
 }
 
 body{
@@ -81,7 +82,9 @@ body{
 	background:teal;
 	color:white;
 	outline: none;
+	border:none;
 	font-size:16px;
+	padding:5px;
 }
 
 .delete-button:hover, .submit-button:hover, .done-button:hover{
@@ -91,6 +94,13 @@ body{
 	background:crimson;
 }
 
+.done{
+	background:#00ff99;
+}
+
+.undone{
+	background:#47476b;
+}
 .form-container{
 	width:500px;
 	margin: 0 auto;
@@ -103,4 +113,6 @@ body{
 .todo-form textarea, .todo-form input{
 	margin:10px 0px;
 	font-size:16px;
+	border-radius:5px;
+	border:2px solid white;
 }
