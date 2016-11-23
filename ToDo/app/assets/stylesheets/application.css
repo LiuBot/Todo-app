@@ -80,7 +80,7 @@ body::-webkit-scrollbar-thumb {
 	float:left;
 }
 .list-items{
-	width:500px;
+	width:700px;
 	margin:0 auto;
 }
 .list-item-li{
@@ -182,6 +182,10 @@ label {
 	outline: none;
 	border:2px solid gray;
 	cursor:pointer;
+}
+
+.step-delete-button{
+	background:crimson;
 }
 
 .step-header{

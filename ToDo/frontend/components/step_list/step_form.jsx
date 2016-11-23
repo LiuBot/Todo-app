@@ -24,12 +24,10 @@ class StepForm extends React.Component{
   createStep(e){
   	e.preventDefault();
   	const step = Object.assign({}, this.state);
-  	this.props.createStep({step});
+  	this.props.createStep(step);
   	//reset form 
   	this.setState({
   		title: "",
-  		body: "",
-      done:false
   	})
   }
 
@@ -43,10 +41,10 @@ class StepForm extends React.Component{
 
   		<label>Add Step</label>
   			<input type='text'
-  			value={title}
         className="step-input"
+        value={title}
   			placeholder="i.e. Do google search"
-  			onChange= {this.updateStep} 
+  			onChange= {this.updateStep}
         required/>
   			<br />
   		<button

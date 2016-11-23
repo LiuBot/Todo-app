@@ -9,13 +9,13 @@ class StepList extends React.Component{
 		return(
 		<div> 
 		<h4 className="steps-label">Steps</h4>
-			<ol>
+			<ul>
 				{
 					steps.map(step =>(
 				 <StepListItemContainer
           key={step.id}
           step={step} />))}
-			</ol>
+			</ul>
 					<div
 						className="form-container">
 					<StepForm 
